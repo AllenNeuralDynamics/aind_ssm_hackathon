@@ -2,8 +2,20 @@
 	"version": 1,
 	"attached_datasets": [
 		{
-			"id": "659b036d-a469-477d-ba62-95b81e2aac43",
-			"mount": "behavior_705599_2024-06-27_12-22-52_processed_sfn_rachel"
+			"id": "36e6841e-54be-4a58-8cb2-0a291a7dd801",
+			"mount": "pose_tracking"
+		},
+		{
+			"id": "91f7ebb0-114c-4c27-b8c8-c9241fb1ce46",
+			"mount": "VBN_video_timestamps"
+		},
+		{
+			"id": "9bcb6dc8-be20-4af6-b700-1efa05cf1875",
+			"mount": "psy_fits"
+		},
+		{
+			"id": "d6805a10-89fc-4b22-a9b3-99ce5a44756b",
+			"mount": "visual-behavior-neuropixels"
 		}
 	]
 }

@@ -1,6 +1,5 @@
-# hash:sha256:b6bfe6cb8d10e64bb0fce6736ac5f683813dc59e075ce01c758bb95a7f0be6e6
-ARG REGISTRY_HOST
-FROM $REGISTRY_HOST/codeocean/pytorch-cpu-only:2.4.0
+# hash:sha256:3c09b543c48e44c5101c6214c0ea6b12b9be7764a1be670f4e8152f31acd1e1d
+FROM registry.codeocean.allenneuraldynamics.org/codeocean/jupyterlab:3.6.1-miniconda4.12.0-python3.9-ubuntu20.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -8,12 +7,11 @@ ARG GIT_ASKPASS
 ARG GIT_ACCESS_TOKEN
 COPY git-askpass /
 
-RUN pip3 install -U --no-cache-dir \
-    dynamax[notebooks]==0.1.4 \
-    ipympl==0.9.4 \
-    pyro-ppl==1.9.1 \
-    -e git+https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-basic-analysis.git@5543aa88f3585200e4dc896c1a366de3803c0166#egg=aind-dynamic-foraging-basic-analysis \
-    -e git+https://github.com/AllenNeuralDynamics/aind-dynamic-foraging-data-utils.git@2fbd35ee5a28d071ad6160ffbf10579506b58a17#egg=aind-dynamic-foraging-data-utils
+RUN pip install -U --no-cache-dir \
+    ipywidgets \
+    numpy==1.23.4 \
+    scikit-learn==1.3.0 \
+    allensdk==2.15.1 \
+    dynamax[notebooks]
 
-COPY postInstall /
-RUN /postInstall
+ENV PYTHONPATH "${PYTHONPATH}:/root/capsule/code"
