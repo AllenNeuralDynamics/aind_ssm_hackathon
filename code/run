@@ -4,14 +4,8 @@ set -ex
 # This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
 jupyter nbconvert \
 	--to 'html' \
-	--ExecutePreprocessor.allow_errors=True \
+	--ExecutePreprocessor.allow_errors=False \
 	--ExecutePreprocessor.timeout=-1 \
 	--FilesWriter.build_directory=../results \
-	--execute WorkshopSolutions/Workshop_1_Solutions.ipynb
+	--execute Workshop_engagement_with_face.ipynb
 
-jupyter nbconvert \
-	--to 'html' \
-	--ExecutePreprocessor.allow_errors=True \
-	--ExecutePreprocessor.timeout=-1 \
-	--FilesWriter.build_directory=../results \
-	--execute WorkshopSolutions/Workshop_2_Solutions.ipynb
